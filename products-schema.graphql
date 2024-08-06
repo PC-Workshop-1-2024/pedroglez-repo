@@ -32,6 +32,10 @@ type Query {
   """
   productVariant(id: ID!): ProductVariant
   """
+  """
+  Get a specific order by id. Meant to be used for a detailed view of an order
+  """
+  order(id: ID!): Order @authenticated
 }
 
 """
@@ -150,9 +154,3 @@ type User @key(fields: "id") {
 #type Subscription {
 #ADD SUBSCRIPTION FIELDS AND RETURN TYPES HERE
 #}
-type Query {
-  """
-  Get a specific order by id. Meant to be used for a detailed view of an order
-  """
-  order(id: ID!): Order @authenticated
-}
